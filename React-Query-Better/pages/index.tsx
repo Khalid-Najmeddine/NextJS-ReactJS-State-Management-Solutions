@@ -34,7 +34,7 @@ export default function Home() {
   const [filter, setFilter] = useState("")
 
   const filteredPokemon = useMemo(() => 
-    pokemon.filter((filterPokemon) => 
+    pokemon?.filter((filterPokemon) => 
       filterPokemon.name.toLowerCase().includes(filter.toLowerCase())
     ), [filter, pokemon]
   )
@@ -55,7 +55,7 @@ export default function Home() {
         />
       </div>
       <div className={styles.container}>
-        {filteredPokemon.slice(0,20).map((mapPokemon) => (
+        {filteredPokemon?.slice(0,20).map((mapPokemon) => (
           <div key={mapPokemon.id} className={styles.image}>
             <img 
               alt={mapPokemon.name} 
