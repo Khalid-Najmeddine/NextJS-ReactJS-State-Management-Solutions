@@ -32,9 +32,9 @@ export default function Home({initialPokemon}:{initialPokemon: Pokemon[]}) {
   const [filter, setFilter] = useState("")
 
   const filteredPokemon = useMemo(() => 
-    pokemon.filter((filterPokemon) => 
+    initialPokemon.filter((filterPokemon) => 
       filterPokemon.name.toLowerCase().includes(filter.toLowerCase())
-    ), [filter, pokemon]
+    ), [filter, initialPokemon]
   )
 
   return(
